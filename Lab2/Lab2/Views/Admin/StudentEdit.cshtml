@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "StudentEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Lab2.Models.Student
+
+<h2>Student Details Edit</h2>
+
+<form action="/Admin/StudentEdit" method="post">
+
+    <input type="hidden" name="Id" class="form-control" value="@Model.Id" />
+
+    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+    <input type="text" name="DOB" class="form-control" value="@Model.DOB" />
+    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+
+    <input type="number" name="Credit" class="form-control" value="@Model.Credit" />
+    @Html.ValidationMessageFor(model => model.Credit, "", new { @class = "text-danger" })
+
+    <input type="number" name="Cgpa" step="0.01" value="@Model.Cgpa" class="form-control">
+    @Html.ValidationMessageFor(model => model.Cgpa, "", new { @class = "text-danger" })
+
+    <select name="DepartmentName" class="form-control" value="@Model.DepartmentName">
+        <option value="CSE">CSE</option>
+        <option value="EEE">EEE</option>
+        <option value="BBA">BBA</option>
+    </select>
+
+    <input type="submit" name="submit" value="Update" class="btn btn-block btn-success" />
+</form>
+

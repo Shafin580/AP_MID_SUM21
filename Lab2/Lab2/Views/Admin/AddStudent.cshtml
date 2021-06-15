@@ -1,0 +1,29 @@
+﻿@model Lab2.Models.Student
+
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Add Student</h2>
+
+<form action="/Admin/AddStudent" method="post">
+    <input type="text" name="Name" class="form-control" placeholder="Name: Shafin Ahmed" />
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    <input type="text" name="Id" class="form-control" placeholder="ID: 18-36467-1" />
+    <input type="date" name="DOB" class="form-control" />
+    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+    <input type="number" name="Credit" class="form-control" placeholder="Credit: 110" />
+    @Html.ValidationMessageFor(model => model.Credit, "", new { @class = "text-danger" })
+    <input type="number" name="Cgpa" step="0.01" placeholder="CGPA: 2.5" class="form-control">
+    @Html.ValidationMessageFor(model => model.Cgpa, "", new { @class = "text-danger" })
+    <select name="DepartmentName" class="form-control">
+        <option value="CSE">CSE</option>
+        <option value="EEE">EEE</option>
+        <option value="BBA">BBA</option>
+    </select>
+    <input type="submit" name="submit" value="Add" class="btn btn-block btn-success" />
+</form>
+

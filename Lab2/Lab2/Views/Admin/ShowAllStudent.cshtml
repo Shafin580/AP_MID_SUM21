@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ShowStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Lab2.Models.Student>
+
+<h2>Student Details</h2>
+
+<div class="container">
+    <table class="table table-condensed">
+        <tr>
+            <th>Name</th>
+            <th>Student Id</th>
+            <th>DOB</th>
+            <th>Credit</th>
+            <th>CGPA</th>
+            <th>Department</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var Student in Model)
+        {
+            <tr>
+                <td>@Student.Name</td>
+                <td>@Student.Id</td>
+                <td>@Student.DOB</td>
+                <td>@Student.Credit</td>
+                <td>@Student.Cgpa</td>
+                <td>@Student.DepartmentName</td>
+                <td><a href="/Admin/StudentEdit/@Student.Id" class="btn btn-success">Edit</a></td>
+                <td><a href="/Admin/StudentDelete/@Student.Id" class="btn btn-danger">Delete</a></td>
+                <td></td>
+            </tr>
+        }
+
+    </table>
+</div>
+
