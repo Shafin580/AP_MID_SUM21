@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "BuyProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Confirm Order</h2>
+<br />
+
+<div>
+    <form action="/Customer/BuyProduct" method="post" ">
+        <input type="hidden" name="CustomerId" value="@ViewBag.CustomerId" />
+        <label class="col-sm-2 col-form-label">Delivery Location</label>
+        <input type="text" name="DeliveryLocation" class="form-control" placeholder="Delivery Location" />
+        <label class="col-sm-2 col-form-label">Contact Number</label>
+        <input type="number" name="CustomerContactNumber" value="" class="form-control" />
+        <label class="col-sm-2 col-form-label">Delivery Date</label>
+        <input type="date" name="DeliveryDate" value="" class="form-control" />
+        <input type="hidden" name="ProductId" value="@ViewBag.Product.Id" class="form-control" />
+        <label class="col-sm-2 col-form-label">Quantity</label>
+        <select class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label class="col-sm-2 col-form-label">Delivery Charge</label>
+        <input type="text" name="DeliveryCharge" value="60" class="form-control" readonly/>
+        <label class="col-sm-2 col-form-label">Advance Payment</label>
+        <input type="number" name="AdvancePaid" value="" class="form-control" />
+        <label class="col-sm-2 col-form-label">Total Price</label>
+        <input type="number" name="TotalPrice" value="@ViewBag.TotalPrice" class="form-control" readonly/>
+        <input type="hidden" name="DeliveryStatus" value="0" class="form-control" />
+        <label class="col-sm-2 col-form-label">Bkash Number</label>
+        <input type="number" name="TransactionNumber" value="" class="form-control" />
+        <br />
+        <input type="submit" class="btn btn-success" value="Confirm Order" />
+    </form>
+</div>
+

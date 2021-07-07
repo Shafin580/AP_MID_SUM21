@@ -1,0 +1,132 @@
+﻿@model IEnumerable<OnlineBakingShop.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products</h2>
+
+<h3>Cake</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.Category.CategoryName == "Cake")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Show Details", "ProductDetails", new { id = item.Id }, new { @class = "btn-primary btn" }) |
+                    @Html.ActionLink("Buy", "BuyProduct", new { id = item.Id }, new { @class = "btn-danger btn" })
+                </td>
+            </tr>
+
+        }
+
+    }
+
+
+</table>
+
+
+<h3>Brownie</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.Category.CategoryName == "Brownie")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Show Details", "ProductDetails", new { id = item.Id }, new { @class = "btn-primary btn" }) |
+                    @Html.ActionLink("Buy", "BuyProduct", new { id = item.Id }, new { @class = "btn-danger btn" })
+                </td>
+            </tr>
+
+        }
+
+    }
+
+
+</table>
+
+
+<h3>Cupcake</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.Category.CategoryName == "Cupcake")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Show Details", "ProductDetails", new { id = item.Id }, new { @class = "btn-primary btn" }) |
+                    @Html.ActionLink("Buy", "BuyProduct", new { id = item.Id }, new { @class = "btn-danger btn" })
+                </td>
+            </tr>
+
+        }
+
+    }
+
+
+</table>
+
+@Html.ActionLink("View Profile", "ShowProfile", new { Username = Session["Username"] }, new { @class = "btn-primary btn" })
+
+@Html.ActionLink("Purchase History", "TransactionHistory", new { Id = Session["CustomerId"] }, new { @class = "btn-primary btn" })
+
