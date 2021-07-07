@@ -15,14 +15,14 @@ namespace OnlineBakingShop.Controllers
         {
             if(Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Customer")
-                //{
+                if (Session["UserType"].ToString().Equals("Courier"))
+                {
                     return View();
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
                 
             }
             else
@@ -73,19 +73,19 @@ namespace OnlineBakingShop.Controllers
   
         }
 
-        public ActionResult ShowProfile(String Username)
+        public ActionResult ShowProfile(String username)
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Customer")
-                //{
-                    var userDetails = context.Couriers.FirstOrDefault(user => user.Username == Username);
+                if (Session["UserType"].ToString().Equals("Courier"))
+                {
+                    var userDetails = context.Couriers.FirstOrDefault(user => user.Username == username);
                     return View(userDetails);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
                 
             }
 
@@ -102,15 +102,15 @@ namespace OnlineBakingShop.Controllers
 
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Customer")
-                //{
+                if (Session["UserType"].ToString().Equals("Courier"))
+                {
                     var userDetails = context.Couriers.FirstOrDefault(user => user.Id == Id);
                     return View(userDetails);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
                 
             }
 

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using OnlineBakingShop.Models;
 
+
 namespace OnlineBakingShop.Controllers
 {
     public class AdminController : Controller
@@ -16,16 +17,16 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     var product = context.Products.ToList();
                     return View(product);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
 
-                //}
+                }
                 
             }
 
@@ -40,14 +41,14 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     return View();
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
                     
             }
 
@@ -78,14 +79,19 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
-                    return View();
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
+                    Product product = new Product();
+                    dynamic comboData = new ExpandoObject();
+                    comboData.Product = product;
+                    comboData.Category = context.Categories.ToList();
+                    comboData.Menu = context.Menus.ToList();
+                    return View(comboData);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
 
             }
 
@@ -116,14 +122,14 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     return View();
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
 
             }
 
@@ -154,15 +160,21 @@ namespace OnlineBakingShop.Controllers
 
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     var productDetails = context.Products.FirstOrDefault(product => product.Id == Id);
-                    return View(productDetails);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                    dynamic comboData = new ExpandoObject();
+                    comboData.Product = productDetails;
+                    comboData.Category = context.Categories.ToList();
+                    comboData.Menu = context.Menus.ToList();
+                    ViewBag.SelectedCategory = context.Categories.FirstOrDefault(category => category.Id == productDetails.CategoryId);
+                    ViewBag.SelectedFlavour = context.Menus.FirstOrDefault(flavour => flavour.Id == productDetails.FlavourId);
+                    return View(comboData);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
 
             }
 
@@ -195,15 +207,15 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     var product = context.Products.FirstOrDefault(p => p.Id == Id);
                     return View(product);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
 
             }
 
@@ -229,14 +241,14 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     return View();
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
 
             }
 
@@ -285,15 +297,15 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     var courier = context.Couriers.Where(c => c.Registered == false).ToList();
                     return View(courier);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
@@ -306,15 +318,15 @@ namespace OnlineBakingShop.Controllers
         {
             if (Session["Username"] != null)
             {
-                //if (Session["UserType"] == "Admin")
-                //{
+                if (Session["UserType"].ToString().Equals("Admin"))
+                {
                     var courier = context.Couriers.FirstOrDefault(courierInfo => courierInfo.Id == Id);
                     return View(courier);
-                //}
-                //else
-                //{
-                    //return RedirectToAction("Index", "Home");
-                //}
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {

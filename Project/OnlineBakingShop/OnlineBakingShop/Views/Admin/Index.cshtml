@@ -5,11 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+<br />
 <p>
     @Html.ActionLink("Add New Product", "InsertProduct", null, new { @class = "btn btn-success" })
     @Html.ActionLink("Create Admin", "AddAdmin", null, new { @class = "btn btn-primary" })
     @Html.ActionLink("Add Courier", "AddCourier", null, new { @class = "btn btn-danger" })
 </p>
+
+<h1>Products</h1>
+
 <table class="table">
     <tr>
         <th>

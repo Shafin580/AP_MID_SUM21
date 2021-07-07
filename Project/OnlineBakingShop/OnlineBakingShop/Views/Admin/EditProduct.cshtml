@@ -1,78 +1,59 @@
-﻿@model OnlineBakingShop.Models.Product
+﻿@model dynamic
 
-@{
-    ViewBag.Title = "EditProduct";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+<h1>Edit Product</h1>
+<hr style="width:100%; height:10px" , size="16" , color=green />
 
-<h2>Edit Product</h2>
+<form action="/Admin/EditProduct" method="post">
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Product</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+    <input type="hidden" name="Id" value="@Model.Product.Id" />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductPrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductPrice, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductDetail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductDetail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductDetail, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FlavourId, "FlavourId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FlavourId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FlavourId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+    <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" name="ProductName" class="form-control" value="@Model.Product.ProductName" />
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div class="form-group">
+        <label>Product Category</label>
+        <select name="CategoryId" class="form-control">
+            <option selected value="@ViewBag.SelectedCategory.Id">@ViewBag.SelectedCategory.CategoryName</option>
+            @foreach (var item in Model.Category)
+            {
+                <option value="@item.Id">@item.CategoryName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Product Price</label>
+        <input type="number" name="ProductPrice" class="form-control" value="@Model.Product.ProductPrice"/>
+    </div>
+
+    <div class="form-group">
+        <label>Product Detail</label>
+        <input type="text" name="ProductDetail" class="form-control" value="@Model.Product.ProductDetail"/>
+    </div>
+
+    <div class="form-group">
+        <label>Flavour</label>
+        <select name="FlavourId" class="form-control">
+            <option selected value="@ViewBag.SelectedFlavour.Id">@ViewBag.SelectedFlavour.FlavourName</option>
+            @foreach (var item in Model.Menu)
+            {
+                <option value="@item.Id">@item.FlavourName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Product Picture</label>
+        <input type="text" name="Picture" class="form-control" value="@Model.Product.Picture"/>
+    </div>
+
+
+
+    <input type="submit" name="submit" value="Save" class="btn btn-success" />
+
+</form>
+
+
+
