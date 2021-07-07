@@ -24,6 +24,8 @@ namespace OnlineBakingShop.Models
         public int Id { get; set; }
 
         [Display(Name = "Category")]
+
+        [Required(ErrorMessage = "Please put Category Name")]
         public string CategoryName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

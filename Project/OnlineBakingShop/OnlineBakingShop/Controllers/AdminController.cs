@@ -61,9 +61,17 @@ namespace OnlineBakingShop.Controllers
 
         public ActionResult InsertProductCategory(Category category)
         {
-            context.Categories.Add(category);
-            context.SaveChanges();
-            return View();
+            if (ModelState.IsValid)
+            {
+                context.Categories.Add(category);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         public ActionResult InsertProduct()
@@ -91,9 +99,17 @@ namespace OnlineBakingShop.Controllers
 
         public ActionResult InsertProduct(Product product)
         {
-            context.Products.Add(product);
-            context.SaveChanges();
-            return View();
+            if (ModelState.IsValid)
+            {
+                context.Products.Add(product);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         public ActionResult InsertFlavour()
@@ -121,9 +137,16 @@ namespace OnlineBakingShop.Controllers
 
         public ActionResult InsertFlavour(Menu menu)
         {
-            context.Menus.Add(menu);
-            context.SaveChanges();
-            return View();
+            if (ModelState.IsValid)
+            {
+                context.Menus.Add(menu);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult EditProduct(int Id)
@@ -154,10 +177,18 @@ namespace OnlineBakingShop.Controllers
 
         public ActionResult EditProduct(Product newData)
         {
-            var oldData = context.Products.FirstOrDefault(product => product.Id == newData.Id);
-            context.Entry(oldData).CurrentValues.SetValues(newData);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var oldData = context.Products.FirstOrDefault(product => product.Id == newData.Id);
+                context.Entry(oldData).CurrentValues.SetValues(newData);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         public ActionResult DeleteProduct(int Id)
@@ -229,10 +260,18 @@ namespace OnlineBakingShop.Controllers
 
             if (user == null)
             {
-                context.Logins.Add(loginInfo);
-                context.Admins.Add(admin);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                //if (ModelState.IsValid)
+                //{
+                    context.Logins.Add(loginInfo);
+                    context.Admins.Add(admin);
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                //}
+                //else
+                //{
+                    //return View();
+                //}
+                
             }
             else
             {

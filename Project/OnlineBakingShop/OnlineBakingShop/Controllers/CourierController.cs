@@ -52,10 +52,18 @@ namespace OnlineBakingShop.Controllers
 
             if (user == null)
             {
-                context.Logins.Add(loginInfo);
-                context.Couriers.Add(courierInfo);
-                context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                //if (ModelState.IsValid)
+                //{
+                    context.Logins.Add(loginInfo);
+                    context.Couriers.Add(courierInfo);
+                    context.SaveChanges();
+                    return RedirectToAction("Index", "Home");
+                //}
+                //else
+                //{
+                    //return View();
+                //}
+                
             }
             else
             {
@@ -118,9 +126,17 @@ namespace OnlineBakingShop.Controllers
         public ActionResult EditProfile(Courier newData)
         {
             var oldData = context.Couriers.FirstOrDefault(user => user.Id == newData.Id);
-            context.Entry(oldData).CurrentValues.SetValues(newData);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                context.Entry(oldData).CurrentValues.SetValues(newData);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
     }
 }

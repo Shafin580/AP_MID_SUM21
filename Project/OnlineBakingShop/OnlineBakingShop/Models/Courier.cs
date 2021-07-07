@@ -22,13 +22,27 @@ namespace OnlineBakingShop.Models
         }
     
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Please put Name")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Please put Username")]
         public string Username { get; set; }
+
+        [Required(ErrorMessage = "Please put Email")]
+
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Please put Password")]
         public string Password { get; set; }
 
         [Display(Name = "Phone Number")]
+
+        [Required(ErrorMessage = "Please put Phone Number")]
         public long PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Please put NID")]
         public string NID { get; set; }
         public bool Registered { get; set; }
         public bool Availability { get; set; }

@@ -18,9 +18,13 @@ namespace OnlineBakingShop.Models
         public int Id { get; set; }
 
         [Display(Name = "Courier ID")]
+
+        [Required(ErrorMessage = "Please put Courier ID")]
         public Nullable<int> CourierId { get; set; }
 
         [Display(Name = "Transaction ID")]
+
+        [Required(ErrorMessage = "Please put Transaction ID")]
         public int TransactionId { get; set; }
         public virtual Courier Courier { get; set; }
         public virtual Transaction Transaction { get; set; }

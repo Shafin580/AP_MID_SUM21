@@ -24,10 +24,16 @@ namespace OnlineBakingShop.Models
         public int Id { get; set; }
 
         [Display(Name = "Flavour")]
+
+        [Required(ErrorMessage = "Please put Flavour Name")]
         public string FlavourName { get; set; }
 
         [Display(Name = "Details")]
+
+        [Required(ErrorMessage = "Please put Description")]
         public string FlavourDetail { get; set; }
+
+        [Required(ErrorMessage = "Please put Price")]
         public double Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

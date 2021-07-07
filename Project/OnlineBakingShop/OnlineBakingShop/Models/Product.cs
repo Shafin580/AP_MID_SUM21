@@ -24,19 +24,31 @@ namespace OnlineBakingShop.Models
         public int Id { get; set; }
 
         [Display(Name = "Name")]
+
+        [Required(ErrorMessage = "Please put Product Name")]
         public string ProductName { get; set; }
 
         [Display(Name = "Price")]
+
+        [Required(ErrorMessage = "Please put Product Price")]
         public double ProductPrice { get; set; }
 
         [Display(Name = "Category")]
+
+        [Required(ErrorMessage = "Please put Category")]
         public int CategoryId { get; set; }
 
         [Display(Name = "Description")]
+
+        [Required(ErrorMessage = "Please put Product Description")]
         public string ProductDetail { get; set; }
+
+        [Required(ErrorMessage = "Please put Picture")]
         public string Picture { get; set; }
 
         [Display(Name = "Flavour")]
+
+        [Required(ErrorMessage = "Please put Flavour")]
         public int FlavourId { get; set; }
     
         public virtual Category Category { get; set; }

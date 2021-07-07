@@ -18,10 +18,14 @@ namespace OnlineBakingShop.Models
         public int LoginId { get; set; }
 
         [Display(Name = "Username")]
+
+        [Required(ErrorMessage = "Please put Username")]
         public string LoginUsername { get; set; }
 
         [Display(Name = "Email")]
         public string LoginEmail { get; set; }
+
+        [Required(ErrorMessage = "Please put Password")]
 
         [Display(Name = "Password")]
         public string LoginPassword { get; set; }

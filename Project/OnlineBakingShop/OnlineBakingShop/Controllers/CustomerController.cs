@@ -54,10 +54,18 @@ namespace OnlineBakingShop.Controllers
 
             if (user == null)
             {
-                context.Logins.Add(loginInfo);
-                context.Customers.Add(customerInfo);
-                context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                //if (ModelState.IsValid)
+                //{ 
+                        context.Logins.Add(loginInfo);
+                        context.Customers.Add(customerInfo);
+                        context.SaveChanges();
+                        return RedirectToAction("Index", "Home");  
+                //}
+                //else
+                //{
+                    //return View();
+                //}
+                
             }
             else
             {
@@ -144,9 +152,17 @@ namespace OnlineBakingShop.Controllers
         public ActionResult EditProfile(Customer newData)
         {
             var oldData = context.Customers.FirstOrDefault(user => user.Id == newData.Id);
-            context.Entry(oldData).CurrentValues.SetValues(newData);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                context.Entry(oldData).CurrentValues.SetValues(newData);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         public ActionResult BuyProduct(int Id)
