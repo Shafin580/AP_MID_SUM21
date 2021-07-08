@@ -12,11 +12,13 @@ namespace OnlineBakingShop.Controllers
         OnlineBakingShopEntities context = new OnlineBakingShopEntities();
         public ActionResult Index()
         {
+            
             return View();
         }
 
         public ActionResult Login()
         {
+            
             return View();
         }
 
