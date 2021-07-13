@@ -85,7 +85,7 @@ CREATE TABLE [Transactions] (
 	CustomerContactNumber bigint NOT NULL,
 	DeliveryDate date NOT NULL,
 	ProductId int NOT NULL,
-	ProductQty bit NOT NULL,
+	ProductQty int NOT NULL,
 	DeliveryCharge float NOT NULL DEFAULT '0',
 	AdvancePaid float NOT NULL DEFAULT '0',
 	TotalPrice float NOT NULL,
@@ -123,8 +123,38 @@ CREATE TABLE [Menus] (
 
 )
 GO
+ALTER TABLE [Admins] WITH CHECK ADD CONSTRAINT [Admins_fk0] FOREIGN KEY ([Username]) REFERENCES [Logins]([LoginUsername])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Admins] CHECK CONSTRAINT [Admins_fk0]
+GO
+ALTER TABLE [Admins] WITH CHECK ADD CONSTRAINT [Admins_fk1] FOREIGN KEY ([Email]) REFERENCES [Logins]([LoginEmail])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Admins] CHECK CONSTRAINT [Admins_fk1]
+GO
 
+ALTER TABLE [Customers] WITH CHECK ADD CONSTRAINT [Customers_fk0] FOREIGN KEY ([Username]) REFERENCES [Logins]([LoginUsername])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Customers] CHECK CONSTRAINT [Customers_fk0]
+GO
+ALTER TABLE [Customers] WITH CHECK ADD CONSTRAINT [Customers_fk1] FOREIGN KEY ([Email]) REFERENCES [Logins]([LoginEmail])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Customers] CHECK CONSTRAINT [Customers_fk1]
+GO
 
+ALTER TABLE [Couriers] WITH CHECK ADD CONSTRAINT [Couriers_fk0] FOREIGN KEY ([Username]) REFERENCES [Logins]([LoginUsername])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Couriers] CHECK CONSTRAINT [Couriers_fk0]
+GO
+ALTER TABLE [Couriers] WITH CHECK ADD CONSTRAINT [Couriers_fk1] FOREIGN KEY ([Email]) REFERENCES [Logins]([LoginEmail])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Couriers] CHECK CONSTRAINT [Couriers_fk1]
+GO
 
 
 ALTER TABLE [Products] WITH CHECK ADD CONSTRAINT [Products_fk0] FOREIGN KEY ([CategoryId]) REFERENCES [Categories]([Id])
