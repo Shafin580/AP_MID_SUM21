@@ -17,7 +17,7 @@ CREATE TABLE [Customers] (
 	Username nvarchar(35) NOT NULL UNIQUE,
 	Email nvarchar(35) NOT NULL UNIQUE,
 	Password nvarchar(50) NOT NULL,
-	PhoneNumber bigint UNIQUE,
+	PhoneNumber bigint,
   CONSTRAINT [PK_CUSTOMERS] PRIMARY KEY CLUSTERED
   (
   [Id] ASC
@@ -32,9 +32,9 @@ CREATE TABLE [Couriers] (
 	Email nvarchar(35) NOT NULL UNIQUE,
 	Password nvarchar(50) NOT NULL,
 	PhoneNumber bigint NOT NULL UNIQUE,
-	NID nvarchar(150) NOT NULL,
+	NID nvarchar(150) NOT NULL UNIQUE,
 	Registered bit NOT NULL DEFAULT '0',
-	Availability bit NOT NULL DEFAULT '0',
+	Availability bit NOT NULL DEFAULT '1',
   CONSTRAINT [PK_COURIERS] PRIMARY KEY CLUSTERED
   (
   [Id] ASC
@@ -42,10 +42,10 @@ CREATE TABLE [Couriers] (
 
 )
 GO
-CREATE TABLE [Categories] (
+CREATE TABLE [Types] (
 	Id int NOT NULL IDENTITY(1,1),
-	CategoryName nvarchar(20) NOT NULL UNIQUE,
-  CONSTRAINT [PK_CATEGORIES] PRIMARY KEY CLUSTERED
+	TypeName nvarchar(30) NOT NULL UNIQUE,
+  CONSTRAINT [PK_TYPES] PRIMARY KEY CLUSTERED
   (
   [Id] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
@@ -56,10 +56,11 @@ CREATE TABLE [Products] (
 	Id int NOT NULL IDENTITY(1,1),
 	ProductName nvarchar(50) NOT NULL,
 	ProductPrice float NOT NULL,
-	CategoryId int NOT NULL,
+	TypeId int NOT NULL,
 	ProductDetail nvarchar(80) NOT NULL,
 	Picture nvarchar(150),
 	FlavourId int NOT NULL,
+	Category nvarchar(30) NOT NULL,
   CONSTRAINT [PK_PRODUCTS] PRIMARY KEY CLUSTERED
   (
   [Id] ASC
@@ -89,7 +90,7 @@ CREATE TABLE [Transactions] (
 	DeliveryCharge float NOT NULL DEFAULT '0',
 	AdvancePaid float NOT NULL DEFAULT '0',
 	TotalPrice float NOT NULL,
-	DeliveryStatus bit NOT NULL DEFAULT '0',
+	DeliveryStatus int NOT NULL DEFAULT '0',
 	TransactionNumber bigint,
   CONSTRAINT [PK_TRANSACTIONS] PRIMARY KEY CLUSTERED
   (
@@ -157,7 +158,7 @@ ALTER TABLE [Couriers] CHECK CONSTRAINT [Couriers_fk1]
 GO
 
 
-ALTER TABLE [Products] WITH CHECK ADD CONSTRAINT [Products_fk0] FOREIGN KEY ([CategoryId]) REFERENCES [Categories]([Id])
+ALTER TABLE [Products] WITH CHECK ADD CONSTRAINT [Products_fk0] FOREIGN KEY ([TypeId]) REFERENCES [Types]([Id])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [Products] CHECK CONSTRAINT [Products_fk0]
