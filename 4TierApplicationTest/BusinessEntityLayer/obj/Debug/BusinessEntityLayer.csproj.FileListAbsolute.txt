@@ -1,0 +1,6 @@
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessEntityLayer\bin\Debug\BusinessEntityLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessEntityLayer\bin\Debug\BusinessEntityLayer.pdb
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessEntityLayer\obj\Debug\BusinessEntityLayer.csproj.AssemblyReference.cache
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessEntityLayer\obj\Debug\BusinessEntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessEntityLayer\obj\Debug\BusinessEntityLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessEntityLayer\obj\Debug\BusinessEntityLayer.pdb

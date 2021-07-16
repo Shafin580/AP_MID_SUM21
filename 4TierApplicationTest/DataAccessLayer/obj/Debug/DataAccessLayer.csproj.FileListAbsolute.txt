@@ -1,0 +1,12 @@
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

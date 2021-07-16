@@ -1,0 +1,14 @@
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\BusinessEntityLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\EntityFramework.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\BusinessEntityLayer.pdb
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\bin\Debug\EntityFramework.xml
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\88017\Desktop\ATP 2\4TierApplicationTest\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
