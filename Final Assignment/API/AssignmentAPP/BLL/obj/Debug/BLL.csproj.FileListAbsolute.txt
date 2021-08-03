@@ -1,0 +1,16 @@
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\BLL.dll
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\BLL.pdb
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\AutoMapper.dll
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\BEL.dll
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\DAL.dll
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\EntityFramework.dll
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\BEL.pdb
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\DAL.pdb
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\DAL.dll.config
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\AutoMapper.xml
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\bin\Debug\EntityFramework.xml
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\obj\Debug\BLL.dll
+C:\Users\88017\Desktop\ATP 2\AP_MID_SUM21\Final Assignment\API\AssignmentAPP\BLL\obj\Debug\BLL.pdb
