@@ -1,17 +1,18 @@
-app.controller("addcategory",function($scope,ajax){
+app.controller("addcategory",function($scope,ajax,$location){
 
     $scope.addcategory = function(){
         var c = {
-            id: 0,
             name: $scope.name
         };
-    }
-    ajax.post(API_ROOT+"/api/Category/Add",c,
+        ajax.post(API_ROOT+"/api/Category/Add",c,
     function(response){
-
+        $location.path("/category");
     }
     ,function(error){
 
     });
+
+    }
+    
     
 });
