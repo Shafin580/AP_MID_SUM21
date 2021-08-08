@@ -106,25 +106,31 @@
     <Compile Include="Admin.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdminRepo.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Courier.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="CourierRepo.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerRepo.cs" />
     <Compile Include="Detail.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="DetailRepo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoginRepo.cs" />
     <Compile Include="Menu.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="MenuRepo.cs" />
     <Compile Include="OnlineBakingShop.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +149,7 @@
     <Compile Include="Product.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
@@ -150,9 +157,11 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransactionRepo.cs" />
     <Compile Include="Type.cs">
       <DependentUpon>OnlineBakingShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="TypeRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="OnlineBakingShop.edmx">
