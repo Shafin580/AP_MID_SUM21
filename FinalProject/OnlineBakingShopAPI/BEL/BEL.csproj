@@ -84,11 +84,25 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminModel.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CourierDetail.cs" />
+    <Compile Include="CourierModel.cs" />
+    <Compile Include="CustomerModel.cs" />
+    <Compile Include="DetailModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginModel.cs" />
+    <Compile Include="MenuDetail.cs" />
+    <Compile Include="MenuModel.cs" />
+    <Compile Include="ProductDetails.cs" />
+    <Compile Include="ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionDetail.cs" />
+    <Compile Include="TransactionModel.cs" />
+    <Compile Include="TypeDetail.cs" />
+    <Compile Include="TypeModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
