@@ -16,6 +16,13 @@ namespace BLL
             var loginsDetails = AutoMapper.Mapper.Map<List<Login>, List<LoginModel>>(data);
             return loginsDetails;
         }
+
+        public static LoginModel GetLoginDetails(string username)
+        {
+            var data = LoginRepo.GetLoginDetails(username);
+            var loginDetails = AutoMapper.Mapper.Map<Login, LoginModel>(data);
+            return loginDetails;
+        }
         public static void AddLogin(LoginModel data)
         {
             var LoginData = AutoMapper.Mapper.Map<LoginModel, Login>(data);

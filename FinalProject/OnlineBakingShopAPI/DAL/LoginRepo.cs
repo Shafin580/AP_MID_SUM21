@@ -16,6 +16,12 @@ namespace DAL
         {
             return context.Logins.ToList();
         }
+
+        public static Login GetLoginDetails(string username)
+        {
+            var data = context.Logins.FirstOrDefault(e => e.LoginUsername == username);
+            return data;
+        }
         public static void AddLogin(Login data)
         {
             context.Logins.Add(data);

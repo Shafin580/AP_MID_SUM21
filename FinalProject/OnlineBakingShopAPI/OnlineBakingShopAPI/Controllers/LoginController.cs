@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace OnlineBakingShopAPI.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class LoginController : ApiController
     {
         [Route("api/Login/GetAll")]
@@ -16,6 +18,13 @@ namespace OnlineBakingShopAPI.Controllers
         public List<LoginModel> GetAllLoginDetails()
         {
             return LoginService.GetAllLoginDetails();
+        }
+
+        [Route("api/Login/{username}")]
+        [HttpGet]
+        public LoginModel GetLoginDetails(string username)
+        {
+            return LoginService.GetLoginDetails(username);
         }
 
         [Route("api/Login/Add")]
