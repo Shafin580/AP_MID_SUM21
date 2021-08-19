@@ -48,6 +48,14 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/CourierHome.html",
         controller: 'CourierHome'
     })
+    .when("/CourierProfile", {
+        templateUrl : "views/pages/CourierProfile.html",
+        controller: 'CourierProfile'
+    })
+    .when("/CourierDelivery", {
+        templateUrl : "views/pages/CourierDelivery.html",
+        controller: 'CourierDelivery'
+    })
     .otherwise({
         redirectTo:"/"
     });

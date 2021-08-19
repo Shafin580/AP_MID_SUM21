@@ -1,3 +1,3 @@
-app.controller("CourierHome",function($scope){
+app.controller("CourierHome",function($scope,$http,ajax,$location){
     $scope.fname = "Shafin";
 });
