@@ -16,7 +16,7 @@ namespace BEL
         public int FlavourId { get; set; }
         public string Category { get; set; }
 
-        public string MenuName { get; set; }
-        public string TypeName { get; set; }
+        public virtual MenuModel Menu { get; set; }
+        public virtual TypeModel Type { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace BEL
         public int DeliveryStatus { get; set; }
         public Nullable<long> TransactionNumber { get; set; }
 
-        public string ProductName { get; set; }
+        public virtual ProductModel Product { get; set; }
 
         public ICollection<DetailModel> Details { get; set; }
     }

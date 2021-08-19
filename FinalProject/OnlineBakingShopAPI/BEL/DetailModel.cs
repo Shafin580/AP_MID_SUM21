@@ -10,8 +10,7 @@ namespace BEL
         public int Id { get; set; }
         public Nullable<int> CourierId { get; set; }
         public int TransactionId { get; set; }
-
-        public string CourierName { get; set; }
-        public string TransactionName { get; set; }
+        public virtual CourierModel Courier { get; set; }
+        public virtual TransactionModel Transaction { get; set; }
     }
 }
