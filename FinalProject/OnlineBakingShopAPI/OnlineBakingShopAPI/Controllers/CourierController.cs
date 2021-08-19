@@ -19,6 +19,14 @@ namespace OnlineBakingShopAPI.Controllers
         {
             return CourierService.GetAllCourierDetails();
         }
+
+        [Route("api/Courier/{username}")]
+        [HttpGet]
+        public CourierModel GetCourierDetails(string username)
+        {
+            return CourierService.GetCourierDetails(username);
+        }
+
         [Route("api/Courier/Add")]
         [HttpPost]
         public void AddCourier(CourierModel courier)
