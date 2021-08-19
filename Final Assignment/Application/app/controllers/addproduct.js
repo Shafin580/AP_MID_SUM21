@@ -6,7 +6,7 @@ app.controller("addproduct",function($scope,$http,ajax,$location){
     function(error){
     });
     $scope.addproduct = function(){
-        var p = {
+        var p = { 
             name: $scope.name,
             category_id: $scope.catId,
             price: $scope.price,

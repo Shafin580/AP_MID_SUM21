@@ -1,0 +1,49 @@
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <a href="#!CustomerHome" class="navbar-brand">Online Baking <span>Shop</span></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="#!CustomerHome" class="nav-item nav-link active">Home</a>
+                <a href="#!CustomerTransaction" class="nav-item nav-link">Transactions</a>
+                <a href="#!CustomerMenu" class="nav-item nav-link">Menu</a>
+                <a href="#!CustomerProfile" class="nav-item nav-link">Profile</a>
+                <a href="index.html" class="nav-item nav-link text-danger">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
+
+<h1 class="text-center text-warning mt-5">Menu</h1>
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Type</th>
+            <th scope="col">Details</th>
+            <th scope="col">Flavour</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "p in products">
+            <th scope="row">{{ p.ProductName }}</th>
+            <td>{{ p.ProductPrice }}</td>
+            <td>{{ p.Type.TypeName }}</td>
+            <td>{{ p.ProductDetails }}</td>
+            <td>{{ p.Menu.FlavourName }}</td>
+            <td>{{ p.Category }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

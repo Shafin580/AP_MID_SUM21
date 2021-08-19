@@ -1,7 +1,7 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-light navbar-light">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">Online Baking <span>Shop</span></a>
+                <a href="#!CustomerHome" class="navbar-brand">Online Baking <span>Shop</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -9,10 +9,10 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">Transactions</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
-                        <a href="contact.html" class="nav-item nav-link">Profile</a>
-                        <a href="contact.html" class="nav-item nav-link text-danger">Logout</a>
+                        <a href="#!CustomerTransaction" class="nav-item nav-link">Transactions</a>
+                        <a href="#!CustomerMenu" class="nav-item nav-link">Menu</a>
+                        <a href="#!CustomerProfile" class="nav-item nav-link">Profile</a>
+                        <a href="index.html" class="nav-item nav-link text-danger">Logout</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,9 @@
                             <form>
                                 <div class="control-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Name" required="required" />
+                                        <select ng-model="productId" class="form-control" ng-change="selectProduct()" required>
+                                            <option ng-repeat="p in products" value="{{ p.Id }}">{{ p.ProductName }}</option>
+                                        </select>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><i class="far fa-user"></i></div>
                                         </div>
@@ -101,7 +103,7 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="input-group">
-                                        <input type="email" class="form-control" placeholder="Email" required="required" />
+                                        <input type="text" class="form-control" placeholder="Price" required="required" ng-model="productPrice" value="productPrice" disabled />
                                         <div class="input-group-append">
                                             <div class="input-group-text"><i class="far fa-envelope"></i></div>
                                         </div>
@@ -109,56 +111,71 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Mobile" required="required" />
+                                        <input type="text" class="form-control" placeholder="Type" required="required" ng-model="productType" value="productType" disabled />
                                         <div class="input-group-append">
                                             <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <div class="input-group date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker"/>
-                                        <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
+                                        <input type="text" class="form-control" placeholder="Flavour" required="required" ng-model="productFlavour" value="productFlavour" disabled />
+                                        <div class="input-group-append">
                                             <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="input-group time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker"/>
-                                        <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="input-group">
-                                        <select class="custom-select form-control">
-                                            <option selected>Guest</option>
-                                            <option value="1">1 Guest</option>
-                                            <option value="2">2 Guest</option>
-                                            <option value="3">3 Guest</option>
-                                            <option value="4">4 Guest</option>
-                                            <option value="5">5 Guest</option>
-                                            <option value="6">6 Guest</option>
-                                            <option value="7">7 Guest</option>
-                                            <option value="8">8 Guest</option>
-                                            <option value="9">9 Guest</option>
-                                            <option value="10">10 Guest</option>
-                                        </select>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control" placeholder="Category" required="required" ng-model="productCategory" value="{{ productCategory }}" disabled />
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><i class="fa fa-chevron-down"></i></div>
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                         </div>
                                     </div>
-                                </div>
+
+                                    <div class="control-group">
+                                        <input type="text" class="form-control" placeholder="Delivery Location" required="required" ng-model="deliveryLocation" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <input type="number" class="form-control" placeholder="Contact Number" required="required" ng-model="customerContactNumber" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <div class="input-group date" id="date" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker" ng-model="deliveryDate" />
+                                            <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <input type="number" class="form-control" placeholder="Qty" required="required" ng-model="productQty" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <input type="number" class="form-control" placeholder="Advance Payment" required="required" ng-model="advancePaid" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                        </div>
+                                    </div>
+                                
                                 <div>
-                                    <button class="btn custom-btn" type="submit">Order Now</button>
+                                    <button class="btn btn-danger" type="submit" ng-click="buy()">Order Now</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <h3 ng-model="msg" class="text-center text-success">{{ msg }}</h3>
         </div>
         <!-- Booking End -->
         
