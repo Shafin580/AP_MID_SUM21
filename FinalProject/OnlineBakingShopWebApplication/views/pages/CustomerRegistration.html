@@ -25,18 +25,22 @@
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" placeholder="Enter Name" id="name" ng-model="name">
+            <p ng-model="nameError" class="text-danger">{{ nameError }}</p>
           </div>
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" class="form-control" placeholder="Enter username" id="username" ng-model="username">
+          <p ng-model="usernameError" class="text-danger">{{ usernameError }}</p>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" class="form-control" placeholder="Enter email" id="email" ng-model="email">
+            <p ng-model="emailError" class="text-danger">{{ emailError }}</p>
           </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
           <input type="password" class="form-control" placeholder="Enter password" id="pwd" ng-model="password">
+          <p ng-model="passwordError" class="text-danger">{{ passwordError }}</p>
         </div>
         <button type="submit" class="btn btn-warning" ng-click="register()">Register</button>
       </form>
