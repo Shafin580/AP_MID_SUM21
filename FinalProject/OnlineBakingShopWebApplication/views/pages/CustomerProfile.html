@@ -29,6 +29,7 @@
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" ng-model="name" value="{{ name }}">
+                    <p ng-model="nameError" class="text-danger">{{ nameError }}</p>
                   </div>
                 <div class="form-group">
                   <label for="username">Username:</label>
@@ -37,14 +38,17 @@
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" ng-model="email" value="{{ email }}">
+                    <p ng-model="emailError" class="text-danger">{{ emailError }}</p>
                   </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
-                  <input type="text" class="form-control" id="pwd" ng-model="password" value="{{ password }}">
+                  <input type="password" class="form-control" id="pwd" ng-model="password" value="{{ password }}">
+                  <p ng-model="passwordError" class="text-danger">{{ passwordError }}</p>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Phone Number:</label>
                     <input type="number" class="form-control" id="phoneNumber" ng-model="phoneNumber" value="{{ phoneNumber }}">
+                    <p ng-model="phoneNumberError" class="text-danger">{{ phoneNumberError }}</p>
                   </div>
                 <button type="submit" class="btn btn-success" ng-click="update()">Update</button>
               </form>

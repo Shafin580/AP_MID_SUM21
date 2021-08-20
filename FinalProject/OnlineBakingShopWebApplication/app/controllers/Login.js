@@ -2,6 +2,7 @@ app.controller("Login", function ($scope, $http, ajax, $location) {
   $scope.login = function () {
     $scope.usernameError = "";
     $scope.passwordError = "";
+    $scope.invalidError = "";
     var hasError = false;
     function validation() {
       if ($scope.username === "") {
