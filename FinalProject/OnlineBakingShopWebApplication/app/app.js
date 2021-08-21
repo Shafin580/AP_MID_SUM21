@@ -56,6 +56,26 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/CourierDelivery.html",
         controller: 'CourierDelivery'
     })
+    .when("/AdminProfile", {
+        templateUrl : "views/pages/AdminProfile.html",
+        controller: 'AdminProfile'
+    })
+    .when("/AdminTransactions", {
+        templateUrl : "views/pages/AdminTransactions.html",
+        controller: 'AdminTransactions'
+    })
+    .when("/AdminMenu", {
+        templateUrl : "views/pages/AdminMenu.html",
+        controller: 'AdminMenu'
+    })
+    .when("/AdminAddProduct", {
+        templateUrl : "views/pages/AdminAddProduct.html",
+        controller: 'AdminAddProduct'
+    })
+    .when("/AdminAddFlavour", {
+        templateUrl : "views/pages/AdminAddFlavour.html",
+        controller: 'AdminAddFlavour'
+    })
     .otherwise({
         redirectTo:"/"
     });

@@ -8,13 +8,69 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a href="index.html" class="nav-item nav-link active">Login</a>
-                <a href="#!CustomerRegistration" class="nav-item nav-link">Customer Registration</a>
-                <a href="#!CourierRegistration" class="nav-item nav-link">Courier Registration</a>
+                <a href="#!AdminHome" class="nav-item nav-link active">Home</a>
+                <a href="#!AdminProfile" class="nav-item nav-link">Profile</a>
+                <a href="#!AdminMenu" class="nav-item nav-link">Menu</a>
+                <a href="#!AdminTransactions" class="nav-item nav-link">Transactions</a>
+                <a href="index.html" class="nav-item nav-link">Logout</a>
             </div>
         </div>
     </div>
 </div>
 <!-- Nav Bar End -->
 
-<h1>Admin Home Page</h1>
+<h3 class="text-center text-danger">Courier List</h3>
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">NID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "c in couriers">
+            <th scope="row">{{ c.Id }}</th>
+            <td>{{ c.Name }}</td>
+            <td>{{ c.Username }}</td>
+            <td>{{ c.Email }}</td>
+            <td>{{ c.PhoneNumber }}</td>
+            <td>{{ c.NID }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+
+<h3 class="text-center text-danger">Customer List</h3>
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "cus in customers">
+            <th scope="row">{{ cus.Id }}</th>
+            <td>{{ cus.Name }}</td>
+            <td>{{ cus.Username }}</td>
+            <td>{{ cus.Email }}</td>
+            <td>{{ cus.PhoneNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

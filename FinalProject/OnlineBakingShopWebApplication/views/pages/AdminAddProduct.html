@@ -1,0 +1,70 @@
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">Online Baking <span>Shop</span></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="#!AdminHome" class="nav-item nav-link active">Home</a>
+                <a href="#!AdminProfile" class="nav-item nav-link">Profile</a>
+                <a href="#!AdminMenu" class="nav-item nav-link">Menu</a>
+                <a href="#!AdminTransactions" class="nav-item nav-link">Transactions</a>
+                <a href="index.html" class="nav-item nav-link">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
+
+<div class="container mt-3 w-50">
+
+    <h1 class="text-center text-warning">Add Product</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Name" id="name" ng-model="name">
+            <p ng-model="nameError" class="text-danger">{{ nameError }}</p>
+          </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" class="form-control" placeholder="Enter Price" id="price" ng-model="price">
+          <p ng-model="usernameError" class="text-danger">{{ priceError }}</p>
+        </div>
+        <div class="form-group">
+            <label for="Type">Select Type:</label>
+            <select ng-model="type" class="form-control">
+                <option ng-repeat="t in types" value="{{ t.Id }}">{{ t.TypeName }}</option>
+            </select>
+            <p ng-model="typeError" class="text-danger">{{ typeError }}</p>
+          </div>
+        <div class="form-group">
+          <label for="detail">Product Detail:</label>
+          <input type="text" class="form-control" placeholder="Product Details" id="detail" ng-model="detail">
+          <p ng-model="detailError" class="text-danger">{{ detailError }}</p>
+        </div>
+        <div class="form-group">
+            <label for="Flavour">Select Flavour:</label>
+            <select ng-model="flavour" class="form-control">
+                <option ng-repeat="f in menus" value="{{ f.Id }}">{{ f.FlavourName }}</option>
+            </select>
+            <p ng-model="flavourError" class="text-danger">{{ flavourError }}</p>
+          </div>
+          <div class="form-group">
+            <label for="category">Select Category:</label>
+            <select ng-model="category" class="form-control">
+                <option value="Basic">Basic</option>
+                <option value="Customized">Customized</option>
+            </select>
+            <p ng-model="categoryError" class="text-danger">{{ categoryError }}</p>
+          </div>
+        <button type="submit" class="btn btn-success" ng-click="add()">Add Product</button>
+      </form>
+
+      <h3 class="text-center text-success" ng-model="successMsg">{{ successMsg }}</h3>
+
+</div>
+

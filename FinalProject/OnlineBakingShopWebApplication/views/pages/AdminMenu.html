@@ -1,0 +1,89 @@
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">Online Baking <span>Shop</span></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="#!AdminHome" class="nav-item nav-link active">Home</a>
+                <a href="#!AdminProfile" class="nav-item nav-link">Profile</a>
+                <a href="#!AdminMenu" class="nav-item nav-link">Menu</a>
+                <a href="#!AdminTransactions" class="nav-item nav-link">Transactions</a>
+                <a href="index.html" class="nav-item nav-link">Logout</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
+
+<h1 class="text-center text-warning mt-5">Menu</h1>
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Type</th>
+            <th scope="col">Details</th>
+            <th scope="col">Flavour</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "p in products">
+            <th scope="row">{{ p.ProductName }}</th>
+            <td>{{ p.ProductPrice }}</td>
+            <td>{{ p.Type.TypeName }}</td>
+            <td>{{ p.ProductDetails }}</td>
+            <td>{{ p.Menu.FlavourName }}</td>
+            <td>{{ p.Category }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="#!AdminAddProduct" class="text-center"><button class="btn btn-success">Add Product</button></a>
+
+</div>
+
+
+
+<h1 class="text-center text-warning mt-5">Flavour</h1>
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="row">Flavour Name</th>
+            <th scope="col">Details</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "f in flavours">
+            <th scope="row">{{ f.FlavourName }}</th>
+            <td>{{ f.FlavourDetails }}</td>
+            <td>{{ f.Price }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="#!AdminAddFlavour" class="text-center mr-2"><button class="btn btn-warning">Add Flavour</button></a><br>
+      <form class="mt-5">
+        <div class="form-group">
+            <label for="name" class="text-black"><b>Type Name:</b></label>
+            <input type="text" class="form-control" placeholder="Want to add new Type in your menus?" id="name" ng-model="name">
+          </div>
+          <button type="submit" class="btn btn-success" ng-click="add()">Add Type</button>
+          <p class="text-success" ng-model="msg">{{ msg }}</p>
+      </form>
+      
+
+</div>
+

@@ -1,0 +1,55 @@
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">Online Baking <span>Shop</span></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="#!AdminHome" class="nav-item nav-link active">Home</a>
+                <a href="#!AdminProfile" class="nav-item nav-link">Profile</a>
+                <a href="#!AdminMenu" class="nav-item nav-link">Menu</a>
+                <a href="#!AdminTransactions" class="nav-item nav-link">Transactions</a>
+                <a href="index.html" class="nav-item nav-link">Logout</a>    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
+
+<h1 class="text-center text-danger mt-5">Transaction List</h1>
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Delivery Location</th>
+            <th scope="col">Customer Contact Number</th>
+            <th scope="col">Delivery Date</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Quantity</th>
+            <th scope="col">Delivery Charge</th>
+            <th scope="col">Advanced Paid</th>
+            <th scope="col">Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "t in transactions">
+            <th scope="row">{{ t.Id }}</th>
+            <td>{{ t.DeliveryLocation }}</td>
+            <td>{{ t.CustomerContactNumber }}</td>
+            <td>{{ t.DeliveryDate }}</td>
+            <td>{{ t.Product.ProductName }}</td>
+            <td>{{ t.ProductQty }}</td>
+            <td>{{ t.DeliveryCharge }}</td>
+            <td>{{ t.AdvancePaid }}</td>
+            <td>{{ t.TotalPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
